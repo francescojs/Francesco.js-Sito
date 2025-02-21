@@ -8,6 +8,7 @@
     --black: #181818;
     --white: #ffffff;
     --black_hover: #353535;
+    --yellow-hover: #fdff6e;
 }
 
 body {
@@ -19,6 +20,7 @@ body {
     height: 100vh;
     margin: 0;
 }
+
 
 #background {
     position: absolute;
@@ -34,13 +36,13 @@ body {
     align-items: center;
     position: fixed;
     top: 0;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 #navbar.scrolled {
     background-color: var(--yellow);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 #logo {
     width: 180px;
@@ -63,6 +65,7 @@ body {
     font-size: 20px;
     font-weight: 300;
     font-style: normal;
+    text-decoration: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     text-transform: uppercase;
@@ -77,6 +80,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-grow: 1;
+    margin-top: 240px; 
 }
 
 .mds a {
@@ -87,5 +91,63 @@ body {
 }
 
 .mds h1 {
+    font-family: "Monaco";
     text-align: center;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 100px;
 }
+
+.cta-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    opacity: 0;
+    margin-bottom: 180px;
+    transition: opacity 0.3s ease-in-out;
+    gap: 20px;
+}
+
+.cta-container.visible {
+    opacity: 1;
+}
+
+.cta, .portfolio {
+    padding: 20px 40px;
+    border-radius: 40px;
+    font-size: 24px;
+    font-family: "Ubuntu", serif;
+    font-weight: normal;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.cta {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+.cta a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.cta:hover {
+    background-color: var(--yellow-hover);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.portfolio:hover {
+    background-color: var(--white);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+

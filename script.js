@@ -48,13 +48,16 @@ window.onload = function() {
             new TxtType(elements[i], JSON.parse(toRotate), period);
         }
     }
-   
-    window.addEventListener('scroll', function() {
+    
+        window.addEventListener('scroll', function() {
         var navbar = document.getElementById('navbar');
+        var ctaContainer = document.querySelector('.cta-container');
         if (window.scrollY > 0) {
             navbar.classList.add('scrolled');
+            ctaContainer.classList.add('visible');
         } else {
             navbar.classList.remove('scrolled');
+            ctaContainer.classList.remove('visible');
         }
     });
 };
